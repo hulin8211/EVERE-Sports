@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<!-- Critical for background execution on iOS -->
+		<meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; img-src * 'self' data: https:;">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/swal-forms.css" rel="stylesheet">
+    <link href="lib/angularjs-slider/dist/rzslider.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="lib/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="lib/swal-forms.js"></script>
+    <script src="lib/chart.js/dist/Chart.bundle.min.js"></script>
+
+    <script src="lib/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+    <script src="lib/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="js/gauge.js"></script>
+		<script src="lib/numeral/min/numeral.min.js"></script>
+		<script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/sprintf/dist/sprintf.min.js"></script>
+    <script src="lib/sprintf/dist/angular-sprintf.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+		<script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+		<script src="lib/angularjs-slider/dist/rzslider.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/version.js"></script>
+    <script src="js/sys-var.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/state-machine.js"></script>
+    <script src="js/i18n/en-US.js"></script>
+    <script src="js/i18n/zh-CN.js"></script>
+    <script src="js/i18n/zh-TW.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="services/helpers.js"></script>
+    <script src="services/sfx.service.js"></script>
+    <script src="services/share-scr.service.js"></script>
+    <script src="services/emm-parser.service.js"></script>
+    <script src="services/bt-le.service.js"></script>
+    <script src="services/acc-meter.service.js"></script>
+    <script src="services/wodb.service.js"></script>
+    <script src="services/workout.service.js"></script>
+    <script src="services/history.service.js"></script>
+    <script src="services/sysopts.service.js"></script>
+
+    <script src="controllers/home.ctrl.js"></script>
+    <script src="controllers/dash.ctrl.js"></script>
+    <script src="controllers/workout.ctrl.js"></script>
+    <script src="controllers/history.ctrl.js"></script>
+    <script src="controllers/info.ctrl.js"></script>
+    <script src="controllers/login.ctrl.js"></script>
+      
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+      
+    <link rel='stylesheet' type='text/css' href='/js/fullcalendar/fullcalendar.css' />
+    <script type="text/javascript" src="js/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/js/fullcalendar/jquery-ui.custom.min.js"></script>
+    <script src="/js/fullcalendar/gcal.js"></script>
+      
+    <!-- Include events calendar css file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome-webfont.svg">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/calendar_full.css">
+    <link rel="stylesheet" href="css/calendar_compact.css">
+
+    <!-- Include config file -->
+    <script src="config/config.js"></script>
+
+    <!-- Include events calendar language file -->
+    <script src="js/i18n/en-US.js"></script>
+
+    <!-- Include events calendar js file -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/calendar.js"></script>
+      
+    <title>Capture Photo</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8">
+             
+            var destinationType;
+             
+            document.addEventListener("deviceready",onDeviceReady,false);
+             
+            //Cordova加载完成会触发
+            function onDeviceReady() {
+                destinationType=navigator.camera.DestinationType;
+            }
+         
+            //拍照并编辑
+            function capturePhotoEdit() {
+                //拍照并获取Base64编码的图像（quality : 存储图像的质量，范围是[0,100]）
+                //allowEdit: true 拍照完毕后允许简单编辑
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20,
+                                            allowEdit: true,
+                                            destinationType: Camera.DestinationType.DATA_URL, 
+                                            sourceType: Camera.PictureSourceType.CAMERA, 
+                                            correctOrientation: true,
+                                            saveToPhotoAlbum: true});
+            }
+             
+         
+            //拍照成功
+            function onPhotoDataSuccess(imageData) {
+                console.log(imageData);
+                var smallImage = document.getElementById('smallImage');
+                smallImage.style.display = 'block';
+                smallImage.src = "data:image/jpeg;base64," + imageData;
+            }
+ 
+            //拍照失败
+            function onFail(message) {
+                alert('拍照失败: ' + message);
+            }
+        </script>  
+    
+      
+  </head>
+	<body ng-app="starter" ng-controller="HomeCtrl as ctl">
+		<ion-header-bar class="bar bar-custom" align-title="left">
+			
+            <div class="title " style="right:0px;">
+                <img class="logo title title-left" ng-click="ctl.onVBack();" ng-disabled=" ctl.allowViewHistory" src="img/箭頭3.png">
+                <img class="logo title title-center" style="left: 35%;"src="img/艾威logo2.png">
+            </div>
+            
+			<div class="buttons">
+				<button class="button button-icon button-borderless icon ion-ios-information" ng-click="ctl.onVInfo($event);" ng-if="ctl.allowViewHistory" style="color:white;">
+				</button>
+                <button class="button button-icon button-borderless icon ion-ios-signin" ng-click="ctl.onVSignin($event);" ng-if="ctl.allowViewSignin" style="color:white;">
+				</button>
+                <button class="button button-icon button-borderless icon ion-ios-signup" ng-click="ctl.onVSignup($event);" ng-if="ctl.allowViewSignup" style="color:white;">
+				</button>
+				<button class="button button-icon button-borderless icon ion-stats-bars" ng-click="ctl.onVHistory();" ng-if="ctl.allowViewHistory" style="color:white;">
+				</button>
+                <button class="button button-icon button-borderless icon"
+					ng-class="{ 'ion-android-volume-mute': ctl.mute, 'ion-android-volume-up': !ctl.mute }",
+				 	ng-click="ctl.onVMute();" ng-if="ctl.showMuteControl" style="color:white;">
+				</button>
+				<button class="button button-icon button-borderless icon ion-ios-upload-outline" ng-click="ctl.onVShare();" ng-disabled="ctl.isSharing" style="color:white;">
+				</button>
+                <button style="font-size:14px;line-height: 14px;margin-left: 35%"  onclick="capturePhotoEdit();"></button>
+                
+                
+                
+			</div>
+	</ion-header-bar>
+    
+	<!-- The views will be rendered in the <ion-nav-view> directive below
+		Templates are in the /templates folder (but you could also
+		have templates inline in this html file if you'd like).
+		-->
+		<ion-nav-view></ion-nav-view>
+	</body>
+    
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAnX9EkdKkySIRY89LIwgslKlDIljrU1K0",
+        authDomain: "fir-auth-419cb.firebaseapp.com",
+        databaseURL: "https://fir-auth-419cb.firebaseio.com",
+        projectId: "fir-auth-419cb",
+        storageBucket: "fir-auth-419cb.appspot.com",
+        messagingSenderId: "791802144564"
+      };
+      firebase.initializeApp(config);
+    </script>
+</html>

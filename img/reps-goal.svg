@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg ng-class="{ 'wg-target-inactive' : !ctl.repsGoalEnabled, 'wg-target-active': ctl.repsGoalEnabled }"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 520 520"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="loop-arrow.svg"><metadata
+     id="metadata41"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs39" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     id="namedview37"
+     showgrid="false"
+     inkscape:zoom="0.48397053"
+     inkscape:cx="-57.854762"
+     inkscape:cy="243.8165"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_1" /><g
+     id="g3"
+     transform="translate(18,16.392)"><path class="wg-reps-border"
+       d="m 474.381,119.249 -219.49,0 45.895,-26.492 c 6.34,-3.656 8.51,-11.76 4.852,-18.101 -3.656,-6.338 -11.764,-8.518 -18.102,-4.85 l -88.719,51.213 c -4.099,2.365 -6.625,6.738 -6.625,11.475 0,4.733 2.526,9.107 6.625,11.476 l 88.719,51.225 c 2.088,1.206 4.363,1.779 6.613,1.779 4.58,0 9.035,-2.378 11.486,-6.629 3.658,-6.338 1.488,-14.442 -4.85,-18.101 l -45.885,-26.492 206.23,0 0,247.354 -434.628,0 0,-247.355 96.729,0 c 7.317,0 13.251,-5.933 13.251,-13.251 0,-7.318 -5.934,-13.251 -13.251,-13.251 l -109.98,0 C 5.933,119.249 0,125.182 0,132.5 l 0,273.856 c 0,7.318 5.933,13.252 13.251,13.252 l 461.132,0 c 7.316,0 13.25,-5.934 13.25,-13.252 l 0,-273.856 c 0,-7.318 -5.934,-13.251 -13.252,-13.251 z"
+       id="path5"
+       inkscape:connector-curvature="0" /></g>
+<text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:140px;line-height:100%;font-family:Antonio-Regular;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     class="wg-reps-text"
+     x="141.8519"
+     y="331.97205"
+     id="text3369"
+     sodipodi:linespacing="100%"><tspan
+       sodipodi:role="line"
+       id="tspan3371"
+       text-anchor="middle"
+       x="260"
+       y="353">{{ 'CYCLES' | translate }}</tspan></text>
+</svg>
